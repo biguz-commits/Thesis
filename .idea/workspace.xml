@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="Add poetry packages manager, initialize the env and add a Readme.md file">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
@@ -58,7 +57,7 @@
       <updated>1743710820838</updated>
       <workItem from="1743710826832" duration="11000" />
       <workItem from="1743787458120" duration="41000" />
-      <workItem from="1743849090635" duration="387000" />
+      <workItem from="1743849090635" duration="1436000" />
     </task>
     <task id="LOCAL-00001" summary="Add poetry packages manager, initialize the env and add a Readme.md file">
       <option name="closed" value="true" />
