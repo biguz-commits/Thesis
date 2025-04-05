@@ -3,6 +3,8 @@
 ## A Thesis Project for the Master's Degree in Data Analytics for Business
 
 This repository contains the implementation of an AI recommendation system based on LLMs and Sentiment Analysis, developed as part of a Master's thesis in Data Analytics for Business.
+Dataset: https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023
+
 
 ## Project Overview
 
