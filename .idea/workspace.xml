@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="Add scripts to download, prepare, and upsert data on PineCone" />
+    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="upload fixed, now is working with chromadb">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scripts/Automotive_games_fashion/download.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scripts/Automotive_games_fashion/process.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scripts/Books_Electronics/download.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/scripts/Books_Electronics/process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scripts/download_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/scripts/All_beaty/download_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scripts/process_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/scripts/All_beaty/process_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/upload_beauty.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,20 +32,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/raw" />
+      <recent name="$PROJECT_DIR$/data/scripts/All_beaty" />
       <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
@@ -59,6 +72,8 @@
       <workItem from="1743787458120" duration="41000" />
       <workItem from="1743849090635" duration="1845000" />
       <workItem from="1743958091873" duration="4041000" />
+      <workItem from="1744140455167" duration="4124000" />
+      <workItem from="1744225526415" duration="2876000" />
     </task>
     <task id="LOCAL-00001" summary="Add poetry packages manager, initialize the env and add a Readme.md file">
       <option name="closed" value="true" />
@@ -84,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743962770210</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="upload fixed, now is working with chromadb">
+      <option name="closed" value="true" />
+      <created>1744144959270</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744144959271</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +120,7 @@
     <MESSAGE value="Add poetry packages manager, initialize the env and add a Readme.md file" />
     <MESSAGE value="Add data directory and pip install on poetry HuggingFace library to load the data." />
     <MESSAGE value="Add scripts to download, prepare, and upsert data on PineCone" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add scripts to download, prepare, and upsert data on PineCone" />
+    <MESSAGE value="upload fixed, now is working with chromadb" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload fixed, now is working with chromadb" />
   </component>
 </project>
