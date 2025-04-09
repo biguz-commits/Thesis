@@ -2,8 +2,8 @@ import json
 import os
 from tqdm import tqdm
 
-RAW_DATA_PATH = "../raw"
-PROCESSED_DATA_PATH = "../processed"
+RAW_DATA_PATH = "../../raw"
+PROCESSED_DATA_PATH = "../../processed"
 os.makedirs(PROCESSED_DATA_PATH, exist_ok=True)
 
 

@@ -3,7 +3,7 @@ import json
 import os
 from tqdm import tqdm
 
-RAW_DATA_PATH = "../raw"
+RAW_DATA_PATH = "../../raw"
 os.makedirs(RAW_DATA_PATH, exist_ok=True)
 
 categories = {
