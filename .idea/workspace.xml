@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="upload fixed, now is working with chromadb">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/scripts/Automotive_games_fashion/download.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/scripts/Automotive_games_fashion/process.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/scripts/Books_Electronics/download.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/scripts/Books_Electronics/process.py" afterDir="false" />
+    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="download new data and upload on the db all_beaty">
+      <change afterPath="$PROJECT_DIR$/db/upload_automotive.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/upload_books.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/upload_electronics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/upload_fashion.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/upload_videogames.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/scripts/download_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/scripts/All_beaty/download_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/scripts/process_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/scripts/All_beaty/process_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/upload_beauty.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/test_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/upload_beauty.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/upload_beauty.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,21 +31,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/data/raw" />
       <recent name="$PROJECT_DIR$/data/scripts/All_beaty" />
       <recent name="$PROJECT_DIR$/data" />
@@ -73,7 +73,8 @@
       <workItem from="1743849090635" duration="1845000" />
       <workItem from="1743958091873" duration="4041000" />
       <workItem from="1744140455167" duration="4124000" />
-      <workItem from="1744225526415" duration="2876000" />
+      <workItem from="1744225526415" duration="3081000" />
+      <workItem from="1744474641462" duration="4552000" />
     </task>
     <task id="LOCAL-00001" summary="Add poetry packages manager, initialize the env and add a Readme.md file">
       <option name="closed" value="true" />
@@ -107,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744144959271</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="download new data and upload on the db all_beaty">
+      <option name="closed" value="true" />
+      <created>1744229101887</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744229101887</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +130,7 @@
     <MESSAGE value="Add data directory and pip install on poetry HuggingFace library to load the data." />
     <MESSAGE value="Add scripts to download, prepare, and upsert data on PineCone" />
     <MESSAGE value="upload fixed, now is working with chromadb" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload fixed, now is working with chromadb" />
+    <MESSAGE value="download new data and upload on the db all_beaty" />
+    <option name="LAST_COMMIT_MESSAGE" value="download new data and upload on the db all_beaty" />
   </component>
 </project>

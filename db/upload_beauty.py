@@ -12,7 +12,7 @@ def main():
     client = chromadb.PersistentClient(path="chroma_store")
     collection = client.get_or_create_collection("amazon-reviews")
 
-    processed_dir = os.path.join("..", "data", "processed")
+    processed_dir = os.path.join("..", "data", "processed", "All_Beauty.jsonl")
     files = [f for f in os.listdir(processed_dir) if f.endswith('.jsonl')]
 
     for file in files:
