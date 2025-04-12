@@ -92,6 +92,6 @@ This project is academic research and is not licensed for commercial use without
 
 ## Author
 
-[Your Name]  
+Tommaso Biganzoli 
 Master's Student in Data Analytics for Business  
-[Your University]
+Università Cattolica del Sacro Cuore di Milano
