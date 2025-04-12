@@ -57,7 +57,7 @@ cp .env.example .env
 ### Running the recommendation agent:
 
 ```bash
-poetry run python main.py
+poetry run dev
 ```
 
 ### Example queries:
@@ -92,6 +92,6 @@ This project is academic research and is not licensed for commercial use without
 
 ## Author
 
-[Your Name]  
+Tommaso Biganzoli 
 Master's Student in Data Analytics for Business  
-[Your University]
+Università Cattolica del Sacro Cuore di Milano
