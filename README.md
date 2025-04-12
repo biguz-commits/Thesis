@@ -57,7 +57,7 @@ cp .env.example .env
 ### Running the recommendation agent:
 
 ```bash
-poetry run python main.py
+poetry run dev
 ```
 
 ### Example queries:
