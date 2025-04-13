@@ -6,7 +6,7 @@ def main():
     model = SentenceTransformer("all-MiniLM-L6-v2")
 
     # ✅ Inizializza ChromaDB in modalità persistente (nuova API)
-    client = chromadb.PersistentClient(path="../db/chroma_store")
+    client = chromadb.PersistentClient(path="../chromadb/chroma_store")
     collection = client.get_or_create_collection("amazon-reviews")
 
     # 📊 Conta i documenti presenti nella collection

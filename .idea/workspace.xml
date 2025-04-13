@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="uploaded all the data inside the db!!" />
+    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="uploaded all the data inside the db!!">
+      <change afterPath="$PROJECT_DIR$/products/generate_sql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/products_download.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/upload_automotive.py" beforeDir="false" afterPath="$PROJECT_DIR$/chromadb/upload_automotive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/upload_beauty.py" beforeDir="false" afterPath="$PROJECT_DIR$/chromadb/upload_beauty.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/upload_books.py" beforeDir="false" afterPath="$PROJECT_DIR$/chromadb/upload_books.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/upload_electronics.py" beforeDir="false" afterPath="$PROJECT_DIR$/chromadb/upload_electronics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/upload_fashion.py" beforeDir="false" afterPath="$PROJECT_DIR$/chromadb/upload_fashion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/upload_videogames.py" beforeDir="false" afterPath="$PROJECT_DIR$/chromadb/upload_videogames.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_upload.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,10 +50,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/products" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/data/processed" />
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/data/raw" />
-      <recent name="$PROJECT_DIR$/data/scripts/All_beaty" />
-      <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
   <component name="SharedIndexes">
