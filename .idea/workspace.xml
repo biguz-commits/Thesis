@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="generated sql queries to upload the data on the postgres db">
-      <change afterPath="$PROJECT_DIR$/products/sql_output/divide_sql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="generated sql queries to upload the data on the postgres db" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +67,7 @@
       <workItem from="1744140455167" duration="4124000" />
       <workItem from="1744225526415" duration="3081000" />
       <workItem from="1744474641462" duration="5328000" />
-      <workItem from="1744663494857" duration="2137000" />
+      <workItem from="1744663494857" duration="2213000" />
     </task>
     <task id="LOCAL-00001" summary="Add poetry packages manager, initialize the env and add a Readme.md file">
       <option name="closed" value="true" />
@@ -128,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744563261521</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="generated sql queries to upload the data on the postgres db">
+      <option name="closed" value="true" />
+      <created>1744748360697</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744748360697</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
