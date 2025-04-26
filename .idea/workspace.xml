@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="generated sql queries to upload the data on the postgres db" />
+    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="deleting all the useless files">
+      <change afterPath="$PROJECT_DIR$/llm/client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postgres/db_connection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_db_connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +76,10 @@
       <workItem from="1744225526415" duration="3081000" />
       <workItem from="1744474641462" duration="5328000" />
       <workItem from="1744663494857" duration="2213000" />
+      <workItem from="1744836327702" duration="134000" />
+      <workItem from="1745260990195" duration="16000" />
+      <workItem from="1745425598455" duration="258000" />
+      <workItem from="1745597735676" duration="5640000" />
     </task>
     <task id="LOCAL-00001" summary="Add poetry packages manager, initialize the env and add a Readme.md file">
       <option name="closed" value="true" />
@@ -133,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744748360697</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="deleting all the useless files">
+      <option name="closed" value="true" />
+      <created>1744836427232</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744836427232</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +170,7 @@
     <MESSAGE value="download new data and upload on the db all_beaty" />
     <MESSAGE value="uploaded all the data inside the db!!" />
     <MESSAGE value="generated sql queries to upload the data on the postgres db" />
-    <option name="LAST_COMMIT_MESSAGE" value="generated sql queries to upload the data on the postgres db" />
+    <MESSAGE value="deleting all the useless files" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleting all the useless files" />
   </component>
 </project>
