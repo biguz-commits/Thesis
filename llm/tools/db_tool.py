@@ -48,7 +48,6 @@ def query_purchases(input: QueryPurchasesInput) -> str:
         cursor.execute(query, params)
         rows = cursor.fetchall()
 
-        # Build a human-readable output
         if not rows:
             return "No purchases found matching the given criteria."
 

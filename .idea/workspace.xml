@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="deleting all the useless files">
-      <change afterPath="$PROJECT_DIR$/llm/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postgres/db_connection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_db_connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="creating the connection to the model in client.py file and also created the tool of sql queries to postgres db">
+      <change beforePath="$PROJECT_DIR$/llm/tools/db_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/tools/db_tool.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +74,7 @@
       <workItem from="1745260990195" duration="16000" />
       <workItem from="1745425598455" duration="258000" />
       <workItem from="1745597735676" duration="5640000" />
+      <workItem from="1745686088159" duration="2572000" />
     </task>
     <task id="LOCAL-00001" summary="Add poetry packages manager, initialize the env and add a Readme.md file">
       <option name="closed" value="true" />
@@ -153,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744836427232</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="creating the connection to the model in client.py file and also created the tool of sql queries to postgres db">
+      <option name="closed" value="true" />
+      <created>1745689319838</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745689319838</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +174,7 @@
     <MESSAGE value="uploaded all the data inside the db!!" />
     <MESSAGE value="generated sql queries to upload the data on the postgres db" />
     <MESSAGE value="deleting all the useless files" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleting all the useless files" />
+    <MESSAGE value="creating the connection to the model in client.py file and also created the tool of sql queries to postgres db" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating the connection to the model in client.py file and also created the tool of sql queries to postgres db" />
   </component>
 </project>
