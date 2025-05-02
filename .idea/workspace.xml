@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="creating vectordb_tool.py, to be improved">
-      <change afterPath="$PROJECT_DIR$/chromadb/test_chromadb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="now the vectordb tool is working, pay attention to the path!! This must be absolute!!">
+      <change afterPath="$PROJECT_DIR$/llm/agent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/test_tool2.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/test_tool2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/test_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/test_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/test_tool2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_tool2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/tools/db_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/tools/db_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_client.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,11 +48,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/llm" />
+      <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/products" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/data/processed" />
-      <recent name="$PROJECT_DIR$/tests" />
-      <recent name="$PROJECT_DIR$/data/raw" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -79,7 +85,8 @@
       <workItem from="1745597735676" duration="5640000" />
       <workItem from="1745686088159" duration="2572000" />
       <workItem from="1745783417893" duration="885000" />
-      <workItem from="1746087598032" duration="2228000" />
+      <workItem from="1746087598032" duration="2926000" />
+      <workItem from="1746173786748" duration="7230000" />
     </task>
     <task id="LOCAL-00001" summary="Add poetry packages manager, initialize the env and add a Readme.md file">
       <option name="closed" value="true" />
@@ -169,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745784353007</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="now the vectordb tool is working, pay attention to the path!! This must be absolute!!">
+      <option name="closed" value="true" />
+      <created>1746090874497</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1746090874497</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +204,7 @@
     <MESSAGE value="deleting all the useless files" />
     <MESSAGE value="creating the connection to the model in client.py file and also created the tool of sql queries to postgres db" />
     <MESSAGE value="creating vectordb_tool.py, to be improved" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating vectordb_tool.py, to be improved" />
+    <MESSAGE value="now the vectordb tool is working, pay attention to the path!! This must be absolute!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="now the vectordb tool is working, pay attention to the path!! This must be absolute!!" />
   </component>
 </project>

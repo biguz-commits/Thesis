@@ -27,7 +27,9 @@ dependencies = [
     "peft (>=0.15.2,<0.16.0)",
     "hf-xet (>=1.0.4,<2.0.0)",
     "langchain-core (>=0.3.56,<0.4.0)",
-    "requests (>=2.32.3,<3.0.0)"
+    "requests (>=2.32.3,<3.0.0)",
+    "langgraph (>=0.4.1,<0.5.0)",
+    "langchain-openai (>=0.3.15,<0.4.0)"
 ]
 
 
