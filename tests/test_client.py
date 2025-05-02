@@ -13,7 +13,7 @@ def test_model_response():
     model = get_model()
 
     print("Invio richiesta...")
-    test_message = [HumanMessage(content="Chi è Daniele Biganzoli?")]
+    test_message = [HumanMessage(content="Chi ha vinto la champions league l'anno scorso?")]
     response = model.invoke(test_message)
 
     assert isinstance(response, AIMessage), "La risposta non è un AIMessage!"

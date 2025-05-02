@@ -3,7 +3,7 @@ import chromadb
 from tools.vectordb_tool import query_reviews, QueryReviewsInput
 
 def test_or_upload_collection():
-    client = chromadb.PersistentClient(path="/Users/tommasobiganzoli/PycharmProjects/Thesis/chromadb/chroma_store")
+    client = chromadb.PersistentClient(path="/chromadb/chroma_store")
     collection = client.get_or_create_collection("amazon-reviews")
 
     count = collection.count()
