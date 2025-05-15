@@ -4,17 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="now the vectordb tool is working, pay attention to the path!! This must be absolute!!">
-      <change afterPath="$PROJECT_DIR$/llm/agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="the agent v1.0 ready">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chromadb/.python-version" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chromadb/chroma_store/6b3c019b-3461-4e87-b71a-1224dfd25369/data_level0.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chromadb/chroma_store/6b3c019b-3461-4e87-b71a-1224dfd25369/header.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chromadb/chroma_store/6b3c019b-3461-4e87-b71a-1224dfd25369/index_metadata.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chromadb/chroma_store/6b3c019b-3461-4e87-b71a-1224dfd25369/length.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chromadb/chroma_store/6b3c019b-3461-4e87-b71a-1224dfd25369/link_lists.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chromadb/chroma_store/chroma.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/processed/All_Beauty.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/processed/Amazon_Fashion.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/processed/Automotive.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/processed/Books.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/processed/Electronics.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/processed/Video_Games.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/All_Beauty/meta.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/All_Beauty/reviews.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/Amazon_Fashion/meta.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/Amazon_Fashion/reviews.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/Automotive/meta.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/Automotive/reviews.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/Books/meta.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/Books/reviews.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/Electronics/meta.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/Electronics/reviews.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/Video_Games/meta.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/raw/Video_Games/reviews.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sql_output/insert_purchases.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sql_output/insert_users.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/llm/chroma_store/062e32b5-1ae3-414f-8ff0-d724b225a414/data_level0.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/llm/chroma_store/062e32b5-1ae3-414f-8ff0-d724b225a414/header.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/llm/chroma_store/062e32b5-1ae3-414f-8ff0-d724b225a414/length.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/llm/chroma_store/062e32b5-1ae3-414f-8ff0-d724b225a414/link_lists.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/llm/chroma_store/chroma.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/metadata/All_Beauty_metadata.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/metadata/Amazon_Fashion_metadata.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/metadata/Automotive_metadata.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/metadata/Books_metadata.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/metadata/Electronics_metadata.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/metadata/Video_Games_metadata.jsonl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/test_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/test_tool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/test_tool2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_tool2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/tools/db_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/tools/db_tool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_client.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +116,7 @@
       <workItem from="1745686088159" duration="2572000" />
       <workItem from="1745783417893" duration="885000" />
       <workItem from="1746087598032" duration="2926000" />
-      <workItem from="1746173786748" duration="7230000" />
+      <workItem from="1746173786748" duration="10102000" />
     </task>
     <task id="LOCAL-00001" summary="Add poetry packages manager, initialize the env and add a Readme.md file">
       <option name="closed" value="true" />
@@ -184,7 +214,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746090874497</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="the agent now is working under main.py">
+      <option name="closed" value="true" />
+      <created>1746192432048</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1746192432048</updated>
+    </task>
+    <task id="LOCAL-00014" summary="the agent v1.0 ready">
+      <option name="closed" value="true" />
+      <created>1746194417321</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1746194417321</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +251,8 @@
     <MESSAGE value="creating the connection to the model in client.py file and also created the tool of sql queries to postgres db" />
     <MESSAGE value="creating vectordb_tool.py, to be improved" />
     <MESSAGE value="now the vectordb tool is working, pay attention to the path!! This must be absolute!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="now the vectordb tool is working, pay attention to the path!! This must be absolute!!" />
+    <MESSAGE value="the agent now is working under main.py" />
+    <MESSAGE value="the agent v1.0 ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="the agent v1.0 ready" />
   </component>
 </project>

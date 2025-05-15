@@ -12,8 +12,8 @@ from postgres.db_connection import PostgresDB
 @dataclass
 class QueryPurchasesInput:
     """Input parameters for querying the 'purchases' table."""
-    start_date: Optional[str] = None  # Format 'YYYY-MM-DD'
-    end_date: Optional[str] = None  # Format 'YYYY-MM-DD'
+    start_date: Optional[str] = None  
+    end_date: Optional[str] = None  
     max_price: Optional[float] = None
     title_contains: Optional[str] = None
 
