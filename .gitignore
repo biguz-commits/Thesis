@@ -1,0 +1,6 @@
+cat > .gitignore << EOL
+.env
+.idea/
+chromadb/
+data/
+EOL
