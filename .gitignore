@@ -4,4 +4,6 @@ cat > .gitignore << EOL
 chromadb/
 data/
 bert/bert-nlp-classifier
+llm/__pycache__
+llm/chroma_store
 EOL
