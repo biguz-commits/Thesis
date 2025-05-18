@@ -16,6 +16,9 @@ def get_recommendation_prompt() -> ChatPromptTemplate:
     system_prompt = """
 You are a helpful product recommendation assistant.
 
+You MUST always call at least one tool in your response.
+NEVER answer directly without calling a tool.
+
 Your job is to suggest the best products based on both structured data (from the purchases database) and unstructured data (from user reviews).
 
 You have access to the following tools:
@@ -84,7 +87,7 @@ def create_recommendation_node():
     tools: list[BaseTool] = [query_reviews, query_purchases]
 
     prompt = get_recommendation_prompt()
-    llm_with_tools = llm.bind_tools(tools, tool_choice="required")
+    llm_with_tools = llm.bind_tools(tools)
     runnable = prompt | llm_with_tools
 
     async def recommend(state: State) -> State:
@@ -98,8 +101,13 @@ def create_recommendation_node():
         ai_message: BaseMessage = await runnable.ainvoke({"input_query": query})
 
 
-        results = {}
+        if not hasattr(ai_message, "tool_calls") or not ai_message.tool_calls:
+          state["answer"] = ai_message.content
+          return state
 
+
+        results = {}
+        
         
         for call in ai_message.tool_calls:
             tool_name = call["name"]
@@ -107,8 +115,8 @@ def create_recommendation_node():
             tool = tools_by_name.get(tool_name)
 
             if not tool:
-                results[tool_name] = f"[❌ Tool '{tool_name}' not found]"
-                continue
+              results[tool_name] = f"[ Tool '{tool_name}' not found]"
+              continue
 
             print(f" Calling tool `{tool_name}` with args: {args}")
             result = await tool.ainvoke(args)

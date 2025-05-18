@@ -13,7 +13,7 @@ def test_graph_sync():
 
     graph = create_graph()
 
-    input_query = "Can you suggest me a tv under 300$ ?"
+    input_query = "Can you reccomend me a tv under 300$ ?"
     initial_state = {"input_query": input_query}
 
     final_state = asyncio.run(

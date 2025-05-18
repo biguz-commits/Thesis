@@ -1,18 +1,28 @@
-from langchain_core.messages import HumanMessage, AIMessage
-from llm.agent import agent_executor
+# run with: python -m src.thesis.main
+
+import asyncio
 from uuid import uuid4
+import sys
 import textwrap
+
+import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
 def make_user_friendly(text: str) -> str:
-
     formatted = textwrap.dedent(text).strip()
     return formatted.replace("**", "").replace("\\n", "\n")
 
 
-def main():
+async def run_graph_interactively():
+    from llm.graph.build import create_graph
+
     print("🧠 Welcome to your AI product assistant!\n")
-    thread_id = str(uuid4())
+
+    graph = create_graph()
 
     while True:
         user_input = input("💬 Enter your question (or type 'exit' to quit): ").strip()
@@ -20,27 +30,28 @@ def main():
             print("👋 Goodbye!")
             break
 
-        result = agent_executor.invoke(
-            {
-                "messages": [HumanMessage(content=user_input)]
-            },
-            config={"configurable": {"thread_id": thread_id}}
-        )
+        initial_state = {
+            "input_query": user_input
+        }
 
-        messages = result.get("messages", [])
-        ai_messages = [msg.content for msg in messages if isinstance(msg, AIMessage)]
+        try:
+            final_state = await graph.ainvoke(initial_state)
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            continue
 
-        if ai_messages:
-            raw_response = ai_messages[-1]
-            formatted_response = make_user_friendly(raw_response)
+        print("\n📌 Final state of the graph:\n")
+        for k, v in final_state.items():
+            print(f"{k}: {v}")
 
+        if "answer" in final_state:
             print("\n🤖 Agent response:\n")
-            print(formatted_response)
+            print(make_user_friendly(final_state["answer"]))
         else:
-            print("\n⚠️ No response from agent.")
+            print("\n⚠️ No answer produced by the agent.")
 
         print("\n" + "=" * 80 + "\n")
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(run_graph_interactively())
