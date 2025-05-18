@@ -1,6 +1,7 @@
 from llm.client import get_model
-from llm.types import State
+from llm.state_types import State
 from typing_extensions import Annotated
+from typing import TypedDict
 
 
 llm = get_model()

@@ -1,104 +1,121 @@
+from langchain_core.language_models import BaseChatModel
+from langchain_core.runnables import RunnableConfig
+from langchain_core.tools import BaseTool
+from langchain_core.messages import BaseMessage
+from typing import TypedDict
+from typing_extensions import Annotated
+
+from llm.state_types import State
 from llm.client import get_model
 from llm.tools.db_tool import query_purchases
 from llm.tools.vectordb_tool import query_reviews
-from langgraph.checkpoint.memory import MemorySaver
-from langgraph.prebuilt import create_react_agent
-from app.llm.types import State
-from typing_extensions import Annotated
-from typing import TypedDict
+from langchain_core.prompts import ChatPromptTemplate
 
-# Prompt originale
-system_prompt = """
+
+def get_recommendation_prompt() -> ChatPromptTemplate:
+    system_prompt = """
 You are a helpful product recommendation assistant.
 
-Your job is to suggest the best products based on both structured data (from the purchases database) and unstructured data (user reviews).
+Your job is to suggest the best products based on both structured data (from the purchases database) and unstructured data (from user reviews).
 
-You have access to two tools:
-
-1. `query_reviews` — use it to search for reviews that match the user description. Use this to extract qualitative insights from customers.
-
-2. `query_purchases` — use it to retrieve structured product information (e.g. title, price, average rating, rating count, capacity), and apply filters such as date range, maximum price, minimum capacity, or keywords in the title.
-
-When the user asks for specific constraints (like "price under 700 euros" or "purchased after 2023"), include those as parameters in `query_purchases`.
+You have access to the following tools:
 
 ---
 
- **Use tools only when external data is needed. For example:**
+ `query_reviews`  
+Searches for the most similar reviews to a user query in a large vector database of product reviews.
 
- Finding products that match user preferences  
-_“I want a fantasy book under $15”_
+- **Input**:
+    - `query_text`: natural language description of the product or requirement
+    - `top_k` (optional): number of similar reviews to return (default: 8)
 
- Filtering products by price, rating, capacity, or time  
-_“Show me washing machines under €700 and over 9kg”_  
-_“Products with rating > 4.5 purchased after 2023”_
+- **Output**:
+    - A JSON list of the most similar reviews, each including:
+        - The original review text
+        - Metadata such as product or reviewer info
+        - A similarity score
 
- Retrieving product details and statistics  
-_“What is the average price of robot vacuum cleaners?”_
-
- Extracting customer opinions about specific products  
-_“What do users say about JBL headphones?”_
-
- Justifying recommendations using both review insights and purchase stats
+Use this tool when the user mentions preferences, product types, or descriptive feedback.
 
 ---
 
- **Do NOT use tools for:**
+`query_purchases`  
+Retrieves product and transaction information from a relational database by joining the `purchases` and `products` tables.
 
- General knowledge questions  
-_“Who is the US president?”_
+- **Input filters**:
+    - `start_date`: only purchases from this date forward (YYYY-MM-DD)
+    - `end_date`: only purchases up to this date
+    - `max_price`: only products with price below or equal to this value
+    - `title_contains`: keyword in the product title
 
- Definitions or factual answers unrelated to product data  
-_“What is a blockchain?”_
+- **Output**:
+    - For each matching product:
+        - Price paid
+        - Product title
+        - Average rating
+        - Number of ratings
 
- Entertainment or creative tasks  
-_“Tell me a joke”_
-
- Returning raw tool calls, code, or query examples.  
-**Always return a clean, human-readable answer.**
+Use this tool when the user mentions pricing, product categories, or wants to compare options.
 
 ---
 
- When generating recommendations, clearly present:
-- Product Title
-- Price
-- Average Rating
-- A short review insight (from `query_reviews`, if applicable)
+INSTRUCTIONS:
 
-Avoid returning tool code or query examples — return a human-readable answer ready to be consumed.
-
-Be friendly and informative. Use the tools only when necessary. Otherwise, respond directly.
-"""
-
-# Setup agent
-model = get_model()
-memory = MemorySaver()
-tools = [query_reviews, query_purchases]
-
-agent_executor = create_react_agent(
-    model=model,
-    tools=tools,
-    checkpointer=memory,
-    prompt=system_prompt
-)
+1. You MUST always call at least one tool. If the user query is vague, call both tools with empty or default parameters.
+2. NEVER return raw tool outputs. After gathering the data, rephrase and summarize it into a clear, structured, **human-friendly recommendation**.
+3. Present your answer as a coherent, readable paragraph or bullet points, not JSON or raw data.
+4. Do NOT answer general knowledge or unrelated questions.
+5. Do NOT generate fictional data. Base your answer only on tool results.
+6. If no data is returned by the tools, inform the user politely that no products were found matching the criteria.
 
 
-class RecommendationOutput(TypedDict):
-    answer: Annotated[str, "Response generated by the recommendation agent."]
+
+""".strip()
+
+    return ChatPromptTemplate.from_messages([
+        ("system", system_prompt),
+        ("human", "{input_query}"),
+    ])
+
 
 def create_recommendation_node():
-    async def recommend(state: State) -> State:
-        """
-        Node that uses the product recommendation agent to process the user input and return a recommendation.
-        
-        Inputs:
-        - state["input_query"]: user natural language query about product recommendations
+    llm: BaseChatModel = get_model()
 
-        Output:
-        - state["answer"]: final response generated by the agent (using tools when needed)
-        """
+    tools: list[BaseTool] = [query_reviews, query_purchases]
+
+    prompt = get_recommendation_prompt()
+    llm_with_tools = llm.bind_tools(tools, tool_choice="required")
+    runnable = prompt | llm_with_tools
+
+    async def recommend(state: State) -> State:
+        query = state["input_query"]
+        if not query:
+            raise ValueError("Missing 'input_query' in state")
+
+        tools_by_name = {tool.name: tool for tool in tools}
+
         
-        result = await agent_executor.ainvoke({"input_query": state["input_query"]})
-        state["answer"] = result.get("output", "")
+        ai_message: BaseMessage = await runnable.ainvoke({"input_query": query})
+
+
+        results = {}
+
+        
+        for call in ai_message.tool_calls:
+            tool_name = call["name"]
+            args = call["args"]
+            tool = tools_by_name.get(tool_name)
+
+            if not tool:
+                results[tool_name] = f"[❌ Tool '{tool_name}' not found]"
+                continue
+
+            print(f" Calling tool `{tool_name}` with args: {args}")
+            result = await tool.ainvoke(args)
+            results[tool_name] = result
+
+        
+        state["answer"] = str(results)
         return state
 
     return recommend

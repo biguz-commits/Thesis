@@ -1,7 +1,7 @@
 from tools.db_tool import query_purchases
 
 def test_query_purchases():
-    # Input per testare l'intervallo temporale
+   
     input_data = {
         "input": {
             "start_date": "2024-01-01",
@@ -9,10 +9,9 @@ def test_query_purchases():
         }
     }
 
-    # Esecuzione del tool
     result = query_purchases.invoke(input_data)
 
-    # Asserzioni
+    
     assert isinstance(result, str), "L'output deve essere una stringa."
     assert (
         "Price:" in result or "No purchases found" in result
