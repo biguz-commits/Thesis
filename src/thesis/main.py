@@ -4,6 +4,7 @@ import asyncio
 from uuid import uuid4
 import sys
 import textwrap
+from langgraph.checkpoint.memory import MemorySaver
 
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -22,7 +23,10 @@ async def run_graph_interactively():
 
     print("🧠 Welcome to your AI product assistant!\n")
 
-    graph = create_graph()
+    memory = MemorySaver()
+
+    graph = create_graph(checkpointer=memory)
+    thread_id = str(uuid4())
 
     while True:
         user_input = input("💬 Enter your question (or type 'exit' to quit): ").strip()
@@ -31,11 +35,12 @@ async def run_graph_interactively():
             break
 
         initial_state = {
-            "input_query": user_input
+            "input_query": user_input,
+            "thread_id": thread_id,
         }
 
         try:
-            final_state = await graph.ainvoke(initial_state)
+            final_state = await graph.ainvoke(initial_state, config={"configurable": {"thread_id": thread_id}})
         except Exception as e:
             print(f"❌ Error: {e}")
             continue

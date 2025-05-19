@@ -11,17 +11,16 @@ from transformers import (
 )
 
 
-# 1. Carica il dataset
+
 df = pd.read_csv("data.csv")
 
-# 2. Split train/test
+
 train_df, test_df = train_test_split(df, test_size=0.2, stratify=df["label"], random_state=42)
 
-# 3. Conversione in HuggingFace Dataset
 train_dataset = Dataset.from_pandas(train_df)
 test_dataset = Dataset.from_pandas(test_df)
 
-# 4. Tokenizer
+
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
 def tokenize(example):

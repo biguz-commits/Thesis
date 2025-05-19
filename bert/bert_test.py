@@ -2,7 +2,7 @@ from transformers import BertTokenizer, BertForSequenceClassification
 from pathlib import Path
 import torch
 
-# Usa un path assoluto e risolto
+
 MODEL_PATH = Path("./bert-nlp-classifier/final").resolve()
 
 def classify_query(query: str) -> int:
