@@ -11,7 +11,7 @@ def router(state: State) -> str:
     label = state["label"]
     return "recommendation" if label == 1 else "general_qa"
 
-def create_graph(checkpointer=None) -> StateGraph:
+def create_graph(checkpointer : MemorySaver) -> StateGraph:
     builder = StateGraph(State)
 
     builder.add_node("bert_classifier", create_bert_classifier_node())

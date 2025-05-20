@@ -1,10 +1,11 @@
+# activate the venv with source $(poetry env info --path)/bin/activate
 # run with: python -m src.thesis.main
 
 import asyncio
 from uuid import uuid4
 import sys
 import textwrap
-from langgraph.checkpoint.memory import MemorySaver
+from langgraph.checkpoint.memory import InMemorySaver
 
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -23,7 +24,7 @@ async def run_graph_interactively():
 
     print("🧠 Welcome to your AI product assistant!\n")
 
-    memory = MemorySaver()
+    memory = InMemorySaver()
 
     graph = create_graph(checkpointer=memory)
     thread_id = str(uuid4())
