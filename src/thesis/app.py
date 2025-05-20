@@ -1,5 +1,3 @@
-# run with python -m src.thesis.app
-
 import asyncio
 import textwrap
 import os
@@ -8,82 +6,116 @@ from uuid import uuid4
 import gradio as gr
 from langgraph.checkpoint.memory import InMemorySaver
 
-# Assicuriamoci che i percorsi di import siano corretti
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-# Importa la costruzione del grafo
+
 from llm.graph.build import create_graph
 
 def make_user_friendly(text: str) -> str:
-    """Formatta il testo per una visualizzazione più leggibile."""
+    """Format text for a more readable display."""
     formatted = textwrap.dedent(text).strip()
     return formatted.replace("**", "").replace("\\n", "\n")
 
 def run_app():
-    # Thread ID globale per mantenere la conversazione
+
     THREAD_ID = str(uuid4())
-    # Inizializziamo il memory saver e il grafo
+
     memory = InMemorySaver()
     graph = create_graph(checkpointer=memory)
+    
 
-    def process_question(question):
-        """Versione semplificata che processa una singola domanda"""
-        if not question:
-            return "Per favore inserisci una domanda."
-            
-        # Prepara lo stato iniziale
-        initial_state = {
-            "input_query": question,
-            "thread_id": THREAD_ID,
-        }
+    with gr.Blocks(theme=gr.themes.Soft(primary_hue="blue")) as demo:
+
+        chat_state = gr.State([])
         
-        try:
-            # Esegui il grafo in modo sincrono con asyncio.run
-            final_state = asyncio.run(graph.ainvoke(
-                initial_state, 
-                config={"configurable": {"thread_id": THREAD_ID}}
-            ))
-            
-            # Estrai la risposta
-            if "answer" in final_state:
-                response = make_user_friendly(final_state["answer"])
-                
-                # Per debugging, aggiungi info sul percorso
-                if "label" in final_state:
-                    node_type = "Raccomandazione" if final_state["label"] == 1 else "Risposta Generale"
-                    response += f"\n\n_Classificazione: {node_type}_"
-                
-                return response
-            else:
-                return "Nessuna risposta generata dall'agente."
-                
-        except Exception as e:
-            return f"Errore durante l'elaborazione: {str(e)}"
+        gr.Markdown("# 🧠 AI Product Assistant")
+        gr.Markdown("Ask for information or recommendations about products.")
 
-    # Interfaccia Gradio semplificata
-    demo = gr.Interface(
-        fn=process_question,
-        inputs=gr.Textbox(
-            placeholder="Fai una domanda o chiedi una raccomandazione...",
-            label="La tua domanda"
-        ),
-        outputs=gr.Textbox(label="Risposta dell'assistente"),
-        title="🧠 AI Product Assistant",
-        description="Chiedi informazioni o raccomandazioni sui prodotti. L'assistente utilizza BERT per classificare la tua domanda e indirizzarla al modello più appropriato.",
-        examples=[
-            "Qual è la differenza tra machine learning e deep learning?",
-            "Puoi consigliarmi un laptop per il machine learning?",
-            "Quali sono le caratteristiche principali di TensorFlow?",
-            "Raccomandami un buon monitor per data science."
-        ],
-        theme=gr.themes.Soft(primary_hue="blue")
-    )
+        chat_display = gr.Markdown()
+        
+        with gr.Row():
+            msg = gr.Textbox(
+                placeholder="Ask a question or request a recommendation...",
+                scale=9,
+                container=False,
+                show_label=False
+            )
+            submit = gr.Button("Send", scale=1, variant="primary")
+
+        with gr.Row():
+            examples = gr.Examples(
+                examples=[
+                    "What's the difference between machine learning and deep learning?",
+                    "Can you recommend a laptop for machine learning?",
+                    "What are the main features of TensorFlow?",
+                    "Recommend a good monitor for data science."
+                ],
+                inputs=msg
+            )
+        
+        def update_chat_display(history):
+            """Convert chat history to formatted markdown for display"""
+            markdown = ""
+            for i, (user_msg, bot_msg) in enumerate(history):
+                markdown += f"### 👤 You\n{user_msg}\n\n"
+                markdown += f"### 🤖 Assistant\n{bot_msg}\n\n"
+                markdown += "---\n\n"
+            return markdown
+        
+        def process_message(message, history):
+            """Process a message and update chat history"""
+            if not message:
+                return "", history, update_chat_display(history)
+
+            initial_state = {
+                "input_query": message,
+                "thread_id": THREAD_ID,
+            }
+            
+            try:
+                final_state = asyncio.run(graph.ainvoke(
+                    initial_state, 
+                    config={"configurable": {"thread_id": THREAD_ID}}
+                ))
+                
+                if "answer" in final_state:
+                    response = make_user_friendly(final_state["answer"])
+                else:
+                    response = "No response generated by the assistant."
+                    
+            except Exception as e:
+                response = f"Error during processing: {str(e)}"
+
+            history.append((message, response))
+
+            return "", history, update_chat_display(history)
+
+        submit_click = submit.click(
+            process_message,
+            [msg, chat_state],
+            [msg, chat_state, chat_display]
+        )
+        
+        msg_submit = msg.submit(
+            process_message,
+            [msg, chat_state],
+            [msg, chat_state, chat_display]
+        )
+
+        with gr.Accordion("System Information", open=False):
+            gr.Markdown("""
+            **How it works:**
+            1. BERT classifier analyzes your request
+            2. Based on the classification, one of these agents is activated:
+               - Recommendation agent for product advice
+               - General QA agent for generic questions
+            3. The response is generated and displayed
+            """)
     
     return demo
 
-# Avvio dell'applicazione
 if __name__ == "__main__":
     demo = run_app()
-    # Utilizziamo share=True per risolvere il problema di localhost
     demo.launch(share=True)
