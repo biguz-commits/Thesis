@@ -34,7 +34,6 @@ Optional filters can be applied using the following parameters:
 - `start_date`: include only purchases made on or after this date ('YYYY-MM-DD')
 - `end_date`: include only purchases made on or before this date ('YYYY-MM-DD')
 - `max_price`: include only purchases where the price paid is less than or equal to this amount
-- `min_capacity`: include only products with a capacity greater than or equal to this value (in kilograms)
 - `title_contains`: include only products whose title contains the specified substring (case-insensitive)
 
 Args:
@@ -47,7 +46,7 @@ Returns:
 Note:
     - Data is retrieved through a join between the `purchases` and `products` tables on the `product_id` key.
     - The `price` field refers to the price paid at the time of purchase (not the current product price).
-    - The `average_rating`, `rating_number`, and `capacity` fields are taken directly from the `products` table.
+    - The `average_rating`, `rating_number` fields are taken directly from the `products` table.
     - This tool does not apply any filter by user (`user_id`), so it returns purchases across all users.
 """
 
