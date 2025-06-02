@@ -49,8 +49,8 @@ def run_app():
                 examples=[
                     "What's the difference between machine learning and deep learning?",
                     "Can you recommend a laptop for machine learning?",
-                    "What are the main features of TensorFlow?",
-                    "Recommend a good monitor for data science."
+                    "Can you reccomend me a fantasy book?",
+                    "Who is Cristiano Ronaldo?"
                 ],
                 inputs=msg
             )
