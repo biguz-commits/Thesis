@@ -30,7 +30,7 @@ def run_app():
 
         chat_state = gr.State([])
         
-        gr.Markdown("# 🧠 AI Product Assistant")
+        gr.Markdown("# AI Product Assistant")
         gr.Markdown("Ask for information or recommendations about products.")
 
         chat_display = gr.Markdown()
@@ -59,8 +59,8 @@ def run_app():
             """Convert chat history to formatted markdown for display"""
             markdown = ""
             for i, (user_msg, bot_msg) in enumerate(history):
-                markdown += f"### 👤 You\n{user_msg}\n\n"
-                markdown += f"### 🤖 Assistant\n{bot_msg}\n\n"
+                markdown += f"## You\n{user_msg}\n\n"
+                markdown += f"## Assistant\n{bot_msg}\n\n"
                 markdown += "---\n\n"
             return markdown
         
