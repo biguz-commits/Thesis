@@ -5,11 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8912ca7-7946-4f2b-b6cd-a1e3f0acc716" name="Changes" comment="messo un po' di ordine all'interno della repo">
-      <change afterPath="$PROJECT_DIR$/app/controllers/InvokeController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/health.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/invoke.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/llm/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/llm/graph/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/llm/graph/nodes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/llm/tools/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/postgres/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/products/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/routes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bert/bert_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/bert/bert_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bert/bert_training.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/bert/bert_training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bert/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/bert/data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/InvokeController.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/controllers/InvokeController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/flagged/log.csv" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/flagged/log.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/llm/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/llm/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/llm/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/llm/graph/build.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/llm/graph/build.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/llm/graph/nodes/bert_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/llm/graph/nodes/bert_node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/llm/graph/nodes/general_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/llm/graph/nodes/general_agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/llm/graph/nodes/reccomandation_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/llm/graph/nodes/reccomandation_agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/llm/state_types.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/llm/state_types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/llm/test_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/llm/test_graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/llm/test_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/llm/test_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/llm/tools/db_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/llm/tools/db_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/llm/tools/vectordb_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/llm/tools/vectordb_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/postgres/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/postgres/db_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/postgres/db_connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/products/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/bert/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/products/metadata/All_Beauty_metadata.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/products/metadata/All_Beauty_metadata.jsonl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/products/metadata/Amazon_Fashion_metadata.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/products/metadata/Amazon_Fashion_metadata.jsonl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/products/metadata/Automotive_metadata.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/products/metadata/Automotive_metadata.jsonl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/products/metadata/Books_metadata.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/products/metadata/Books_metadata.jsonl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/products/metadata/Electronics_metadata.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/products/metadata/Electronics_metadata.jsonl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/products/metadata/Video_Games_metadata.jsonl" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/products/metadata/Video_Games_metadata.jsonl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/products/products_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/products/products_download.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/health.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/health.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/invoke.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/invoke.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/controllers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/test_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_db_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/test_db_connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_tool2.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/test_tool2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/test_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ux.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/ux.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,19 +79,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "fullstack",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fullstack&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
@@ -91,6 +135,7 @@
       <workItem from="1746173786748" duration="10102000" />
       <workItem from="1751571795974" duration="491000" />
       <workItem from="1754127724029" duration="6117000" />
+      <workItem from="1754139766058" duration="2548000" />
     </task>
     <task id="LOCAL-00001" summary="Add poetry packages manager, initialize the env and add a Readme.md file">
       <option name="closed" value="true" />

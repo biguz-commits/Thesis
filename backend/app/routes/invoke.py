@@ -13,7 +13,7 @@ class InvokeInput(BaseModel):
 async def invoke(user_input: InvokeInput):
 
     controller = InvokeController()
-    response = await controller.invoke(user_input=user_input)
+    response = await controller.invoke(user_input=user_input.user_input)
 
     return {
         "Agent Response": response,

@@ -1,0 +1,32 @@
+volumes:
+  thesis-data:
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    container_name: thesis-app
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/code/app
+    working_dir: /code
+
+
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: thesis-db
+    restart: always
+    environment:
+      POSTGRES_USER: tommasobiganzoli
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_DB: thesis
+    ports:
+      - "3009:5432"
+
+    volumes:
+      - thesis-data:/var/lib/postgresql/data
