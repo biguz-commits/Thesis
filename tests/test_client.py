@@ -4,7 +4,7 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from llm.client import get_model
+from app.llm.client import get_model
 from langchain_core.messages import HumanMessage, AIMessage
 
 

@@ -1,11 +1,11 @@
 from langgraph.graph import StateGraph
-from llm.state_types import State  
+from app.llm.state_types import State
 
 from langgraph.checkpoint.memory import MemorySaver  
 
-from llm.graph.nodes.bert_node import create_bert_classifier_node
-from llm.graph.nodes.general_agent import create_general_qa_node
-from llm.graph.nodes.reccomandation_agent import create_recommendation_node
+from app.llm.graph.nodes.bert_node import create_bert_classifier_node
+from app.llm.graph.nodes.general_agent import create_general_qa_node
+from app.llm.graph.nodes.reccomandation_agent import create_recommendation_node
 
 def router(state: State) -> str:
     label = state["label"]

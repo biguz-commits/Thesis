@@ -1,3 +1,9 @@
+---
+title: Amazon-Recomandation-System
+app_file: ux.py
+sdk: gradio
+sdk_version: 4.44.1
+---
 # AI Agents for Product Review Analysis and Generation
 
 ## A Thesis Project for the Master's Degree in Data Analytics for Business

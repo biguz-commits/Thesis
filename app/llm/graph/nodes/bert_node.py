@@ -1,13 +1,13 @@
 from transformers import BertForSequenceClassification, AutoTokenizer
 import torch
-from llm.state_types import State  
+from app.llm.state_types import State
 from pathlib import Path
 
 
-model_path = Path("./bert/bert-nlp-classifier/final").resolve()
+model_path = Path("./app/bert/bert-nlp-classifier/final").resolve()
 
 if not model_path.exists():
-    raise FileNotFoundError(f"❌ Model path not found: {model_path}")
+    raise FileNotFoundError(f"Model path not found: {model_path}")
 
 model = BertForSequenceClassification.from_pretrained(
     str(model_path),

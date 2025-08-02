@@ -1,9 +1,9 @@
 cat > .gitignore << EOL
 .env
 .idea/
-chromadb/
-data/
-bert/bert-nlp-classifier
-llm/__pycache__/
-llm/chroma_store/
+app/chromadb/
+app/data/
+app/bert/bert-nlp-classifier
+app/llm/__pycache__/
+app/llm/chroma_store/
 EOL

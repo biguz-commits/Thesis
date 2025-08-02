@@ -2,14 +2,13 @@
 
 import asyncio
 
-from uuid import uuid4
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
 def test_graph_sync():
-    from llm.graph.build import create_graph  
+    from app.llm.graph.build import create_graph
 
     graph = create_graph()
 

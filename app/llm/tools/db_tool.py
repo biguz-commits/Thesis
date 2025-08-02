@@ -6,7 +6,7 @@ import os
 
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
-from postgres.db_connection import PostgresDB
+from app.postgres.db_connection import PostgresDB
 
 
 @dataclass

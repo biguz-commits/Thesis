@@ -3,7 +3,7 @@ from pathlib import Path
 import torch
 
 
-MODEL_PATH = Path("./bert-nlp-classifier/final").resolve()
+MODEL_PATH = Path("bert-nlp-classifier/final").resolve()
 
 def classify_query(query: str) -> int:
     tokenizer = BertTokenizer.from_pretrained(str(MODEL_PATH))

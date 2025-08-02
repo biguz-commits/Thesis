@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "AI agents per l'analisi e la generazione di recensioni di prodotti: un approccio basato su LLM e Sentiment Analysis"
 authors = ["Tommaso Biganzoli"]
 readme = "README.md"
-packages = [{ include = "thesis", from = "src" }]
+packages = [{ include = "app"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
@@ -34,7 +34,8 @@ pandas = "^2.2.3"
 gradio = "^4.0.0"
 
 [tool.poetry.scripts]
-dev = "thesis.main:main"
+dev = "main:run_dev"
+app = "ux:run_app2"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

@@ -11,7 +11,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 
-from llm.graph.build import create_graph
+from app.llm.graph.build import create_graph
 
 def make_user_friendly(text: str) -> str:
     """Format text for a more readable display."""
@@ -115,6 +115,11 @@ def run_app():
             """)
     
     return demo
+
+def run_app2():
+    demo = run_app()
+    demo.launch(share=True)
+
 
 if __name__ == "__main__":
     demo = run_app()

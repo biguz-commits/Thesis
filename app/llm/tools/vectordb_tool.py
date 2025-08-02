@@ -31,7 +31,7 @@ def query_reviews(input: QueryReviewsInput) -> str:
     """
 
     model = SentenceTransformer("all-MiniLM-L6-v2")
-    client = chromadb.PersistentClient(path="/Users/tommasobiganzoli/PycharmProjects/Thesis/chromadb/chroma_store")
+    client = chromadb.PersistentClient(path="/app/chromadb/chroma_store")
     collection = client.get_or_create_collection("amazon-reviews")
 
     query_embedding = model.encode([input.query_text]).tolist()

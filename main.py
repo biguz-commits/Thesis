@@ -20,9 +20,9 @@ def make_user_friendly(text: str) -> str:
 
 
 async def run_graph_interactively():
-    from llm.graph.build import create_graph
+    from app.llm.graph.build import create_graph
 
-    print("🧠 Welcome to your AI product assistant!\n")
+    print(" Welcome to your AI product assistant!\n")
 
     memory = InMemorySaver()
 
@@ -30,9 +30,9 @@ async def run_graph_interactively():
     thread_id = str(uuid4())
 
     while True:
-        user_input = input("💬 Enter your question (or type 'exit' to quit): ").strip()
+        user_input = input("Enter your question (or type 'exit' to quit): ").strip()
         if user_input.lower() in {"exit", "quit"}:
-            print("👋 Goodbye!")
+            print("Goodbye!")
             break
 
         initial_state = {
@@ -58,6 +58,9 @@ async def run_graph_interactively():
 
         print("\n" + "=" * 80 + "\n")
 
+
+def run_dev():
+    asyncio.run(run_graph_interactively())
 
 if __name__ == "__main__":
     asyncio.run(run_graph_interactively())

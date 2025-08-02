@@ -40,7 +40,7 @@ model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_l
 
 # 6. TrainingArguments
 training_args = TrainingArguments(
-    output_dir="./bert-nlp-classifier",
+    output_dir="bert-nlp-classifier",
     eval_strategy="epoch",
     save_strategy="epoch",
     num_train_epochs=4,
