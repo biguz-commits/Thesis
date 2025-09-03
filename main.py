@@ -43,18 +43,18 @@ async def run_graph_interactively():
         try:
             final_state = await graph.ainvoke(initial_state, config={"configurable": {"thread_id": thread_id}})
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f" Error: {e}")
             continue
 
-        print("\n📌 Final state of the graph:\n")
+        print("\n Final state of the graph:\n")
         for k, v in final_state.items():
             print(f"{k}: {v}")
 
         if "answer" in final_state:
-            print("\n🤖 Agent response:\n")
+            print("\n Agent response:\n")
             print(make_user_friendly(final_state["answer"]))
         else:
-            print("\n⚠️ No answer produced by the agent.")
+            print("\n No answer produced by the agent.")
 
         print("\n" + "=" * 80 + "\n")
 

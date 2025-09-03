@@ -76,7 +76,7 @@ class OpenRouterModel(BaseChatModel):
 
 
 def get_model(
-    model_name="mistralai/mistral-7b-instruct",
+    model_name: str = "mistralai/mistral-7b-instruct",
     temperature=0.6,
     max_tokens=2048
 ):
