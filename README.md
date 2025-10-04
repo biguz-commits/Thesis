@@ -66,6 +66,13 @@ cp .env.example .env
 poetry run dev
 ```
 
+### Running gradio UI:
+
+```bash
+poetry run app
+```
+
+
 ### Example queries:
 
 ```
@@ -74,23 +81,6 @@ poetry run dev
 "Can you suggest a coffee machine under $100?"
 ```
 
-## Project Structure
-
-```
-thesis-ai-recommendation/
-├── data/                  # Data processing scripts and sample data
-├── models/                # ML models and embeddings
-├── src/                   # Source code
-│   ├── agent/             # Recommendation agent logic
-│   ├── database/          # Database connectors
-│   ├── embeddings/        # Vector embedding utilities
-│   ├── nlp/               # NLP processing modules
-│   └── sentiment/         # Sentiment analysis components
-├── tests/                 # Unit and integration tests
-├── main.py                # Application entry point
-├── pyproject.toml         # Poetry configuration
-└── README.md              # This file
-```
 
 ## License
 
@@ -99,5 +89,3 @@ This project is academic research and is not licensed for commercial use without
 ## Author
 
 Tommaso Biganzoli 
-Master's Student in Data Analytics for Business  
-Università Cattolica del Sacro Cuore di Milano
